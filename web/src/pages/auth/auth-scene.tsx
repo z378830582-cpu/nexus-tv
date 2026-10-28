@@ -17,14 +17,14 @@ const AUTH_TABS = [
 
 const authCopy = {
     login: {
-        eyebrow: "WELCOME BACK",
-        title: "进入创作现场",
-        description: "继续编辑你的画布、素材与生成任务。",
+        eyebrow: "",
+        title: "ChonkVis 欢迎你回来",
+        description: "开始你的创作之旅",
     },
     register: {
         eyebrow: "CREATE ACCOUNT",
         title: "建立你的创作空间",
-        description: "一个账号管理画布、素材、技能和模型偏好。",
+        description: "一个账号管理画布、素材、技能和模型偏好。"
     },
     recovery: {
         eyebrow: "ACCOUNT RECOVERY",
@@ -86,10 +86,6 @@ export function AuthScene() {
                             <BrandLogo theme={theme} className="size-7" alt="" fallback={<span className="size-7 bg-current" style={{ mask: "url(/logo.svg) center / contain no-repeat", WebkitMask: "url(/logo.svg) center / contain no-repeat" }} />} />
                             {appearance.brandName}
                         </Link>
-                        <button type="button" className="auth-scene-hero-control inline-flex items-center gap-2 rounded-full px-3 py-2 text-[var(--fs-label)] backdrop-blur-xl transition disabled:cursor-default" onClick={playVideo} disabled={videoPlaying || !appearance.authVideoUrl} aria-pressed={videoPlaying}>
-                            <Play className="size-3 fill-current" />
-                            {videoPlaying ? "创作正在发生" : "播放品牌影片"}
-                        </button>
                     </div>
                     <motion.div
                         initial={reducedMotion ? false : { opacity: 0, y: 18 }}
@@ -117,7 +113,7 @@ export function AuthScene() {
                             transition={{ duration: aceternityMotion.duration.panel, ease: aceternityMotion.easing.enter }}
                             className="my-auto w-full max-w-[460px]"
                         >
-                            <div className="auth-scene-card h-auto overflow-hidden rounded-lg backdrop-blur-2xl">
+                            <div className="">
                                 <section aria-label={copy.title} className={`flex flex-col ${recovery ? "min-h-[600px]" : activeTab === "login" ? "" : "min-h-[620px] sm:min-h-[640px]"}`}>
                                     <header className="px-6 pb-5 pt-6 sm:px-8 sm:pt-7">
                                         <p className="auth-scene-eyebrow text-xs font-semibold tracking-[0.18em]">{copy.eyebrow}</p>
