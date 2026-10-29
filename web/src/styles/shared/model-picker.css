@@ -397,6 +397,16 @@ html:not(.dark) .canvas-composer-model-picker[aria-expanded="true"] {
         background: rgba(15, 23, 42, 0.075) !important;
     }
 
+    html:not(.dark) .app-user-workspace .creation-launchpad .creation-model-picker.canvas-composer-model-picker {
+        border-radius: 12px !important;
+        background: transparent !important;
+    }
+
+    html:not(.dark) .app-user-workspace .creation-launchpad .creation-model-picker.canvas-composer-model-picker:hover,
+    html:not(.dark) .app-user-workspace .creation-launchpad .creation-model-picker.canvas-composer-model-picker[aria-expanded="true"] {
+        background: rgba(15, 23, 42, 0.075) !important;
+    }
+
     @container (min-width: 440px) {
 
         .canvas-composer-tools .canvas-composer-model-picker {
@@ -913,16 +923,17 @@ html:not(.dark) .creation-home .creation-chat-composer .creation-model-picker.ca
 }
 .app-user-workspace .creation-chat-composer .creation-model-picker.canvas-composer-model-picker {
     min-height: 40px !important;
-    border-radius: 999px !important;
-    background: var(--user-surface-muted) !important;
+    border-radius: 12px !important;
+    background: transparent !important;
     color: var(--user-ink-muted) !important;
-    transition: none !important;
+    box-shadow: none !important;
+    transition: background var(--user-motion), color var(--user-motion) !important;
 }
 .app-user-workspace .creation-chat-composer .creation-model-picker.canvas-composer-model-picker:hover,
 .app-user-workspace .creation-chat-composer .creation-model-picker.canvas-composer-model-picker[aria-expanded="true"] {
     background: var(--user-surface-hover) !important;
     color: var(--user-ink) !important;
-    box-shadow: 0 8px 18px color-mix(in srgb, var(--user-ink) 8%, transparent);
+    box-shadow: none !important;
 }
 .app-user-workspace .creation-launchpad .creation-model-picker.canvas-composer-model-picker {
     min-height: 36px !important;
